@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+   <generatorConfiguration>
+      <!-- 导入属性配置 -->
+      <!-- <properties resource="datasource.properties"></properties> -->
+
+
+      <!-- 指定数据库的jdbc驱动jar包的位置 -->
+      <classPathEntry location="/Users/tony/.m2/repository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"></classPathEntry>
+
+      <context id="gears-foundation" targetRuntime="MyBatis3">
+         <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+         <property name="xmlFormatter " value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+         <property name="nullCatalogMeansCurrent" value="true" />
+         <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+         <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+         <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin" />
+         <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+            <property name="suppressJavaInterface" value="true" />
+         </plugin>
+         <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$" />
+            <property name="replaceString" value="Criteria" />
+         </plugin>
+
+         <commentGenerator>
+            <property name="suppressAllComments" value="false" />
+            <property name="suppressDate" value="false" />
+            <property name="addRemarkComments" value="true" />
+         </commentGenerator>
+
+
+         <connectionFactory>
+            <property name="driverClass" value="com.mysql.jdbc.Driver" />
+            <property name="connectionURL" value="jdbc:mysql://192.168.119.129:3306/spring?characterEncoding=utf-8" />
+            <property name="userId" value="spring" />
+            <property name="password" value="spring" />
+         </connectionFactory>
+
+
+
+         <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制-->
+         <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+         </javaTypeResolver>
+
+         <!-- MyBatis model层的设置 -->
+         <javaModelGenerator
+                 targetPackage="com.genpact.demo.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+         </javaModelGenerator>
+
+
+         <sqlMapGenerator targetPackage="mybatis"
+                          targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+         </sqlMapGenerator>
+
+         <javaClientGenerator type="ANNOTATEDMAPPER"
+                              targetPackage="com.genpact.demo.mapper"
+                              targetProject="src/main/java">
+            <property name="enableSubPackages" value="false" />
+         </javaClientGenerator>
+
+         <table schema="spring" tableName="acl_role_info"
+                domainObjectName="RoleInfo">
+            <property name="ignoreQualifiersAtRuntime" value="false" />
+            <property name="runtimeSchema" value="spring" />
+         </table>
+
+
+
+      </context>
+
+
+
+   </generatorConfiguration>
