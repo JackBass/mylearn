@@ -9,9 +9,9 @@
 
 
       <!-- 指定数据库的jdbc驱动jar包的位置 -->
-      <classPathEntry location="/Users/tony/.m2/repository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"></classPathEntry>
+      <classPathEntry location="/Users/user/.m2/repository/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"></classPathEntry>
 
-      <context id="gears-foundation" targetRuntime="MyBatis3">
+      <context id="eavesdrop-foundation" targetRuntime="MyBatis3">
          <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
          <property name="xmlFormatter " value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
          <property name="nullCatalogMeansCurrent" value="true" />
@@ -51,7 +51,7 @@
 
          <!-- MyBatis model层的设置 -->
          <javaModelGenerator
-                 targetPackage="com.genpact.demo.model" targetProject="src/main/java">
+                 targetPackage="org.eavesdrop.app.clouder.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="false" />
             <property name="trimStrings" value="true" />
          </javaModelGenerator>
@@ -63,12 +63,12 @@
          </sqlMapGenerator>
 
          <javaClientGenerator type="ANNOTATEDMAPPER"
-                              targetPackage="com.genpact.demo.mapper"
+                              targetPackage="org.eavesdrop.app.clouder.mapper"
                               targetProject="src/main/java">
             <property name="enableSubPackages" value="false" />
          </javaClientGenerator>
 
-         <table schema="spring" tableName="acl_role_info"
+         <table schema="spring" tableName="app_role_info"
                 domainObjectName="RoleInfo">
             <property name="ignoreQualifiersAtRuntime" value="false" />
             <property name="runtimeSchema" value="spring" />
