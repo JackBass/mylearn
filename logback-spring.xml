@@ -2,8 +2,8 @@
 <configuration scan="true" scanPeriod="10 seconds">
 
     <contextName>logback</contextName>
-    <property name="log.path" value="/Users/tony/log"/>
-    <property name="log.prefix" value="gears_foundation" />
+    <property name="log.path" value="/var/log/clouder"/>
+    <property name="log.prefix" value="eavesdrop_foundation" />
 
     <!-- https://www.cnblogs.com/zhangjianbing/p/8992897.html 参考这个地址 描述详细-->
     <property name="log.pattern"
@@ -156,7 +156,7 @@
                          <appender-ref ref="ERROR_FILE" />
                  </appender>
 
-                 <logger name="com.genpact.gears" level="DEBUG" />
+                 <logger name="org.eavesdrop.app.clouder" level="DEBUG" />
                  <logger name="java.sql.Connection" level="DEBUG" />
                  <logger name="java.sql.Statement" level="DEBUG" />
                  <logger name="java.sql.PreparedStatement" level="DEBUG" />
